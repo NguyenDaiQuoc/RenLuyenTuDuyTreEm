@@ -5,6 +5,7 @@ let memoryCards = [];
 let flippedCards = [];
 let matchedPairs = 0;
 let memoryMoves = 0;
+// 8 unique emojis create 16 cards (8 pairs) for a 4x4 grid
 const memoryEmojis = ['🍎', '🍌', '🍊', '🍇', '🐱', '🐶', '🚗', '⭐'];
 
 // Pattern Game Variables
@@ -259,7 +260,8 @@ function initPuzzleGame() {
     // Create initial state (1-8 and empty)
     puzzleState = [1, 2, 3, 4, 5, 6, 7, 8, null];
     
-    // Shuffle (with valid moves only)
+    // Shuffle with 100 random valid moves to ensure solvability
+    // (Only using valid moves guarantees the puzzle can be solved)
     for (let i = 0; i < 100; i++) {
         const emptyIndex = puzzleState.indexOf(null);
         const validMoves = getValidMoves(emptyIndex);

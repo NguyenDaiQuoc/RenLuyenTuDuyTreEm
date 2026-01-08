@@ -33,39 +33,53 @@ function createConfetti() {
     
     for (let i = 0; i < confettiCount; i++) {
         const confetti = document.createElement('div');
+        const color = colors[Math.floor(Math.random() * colors.length)];
+        const leftPos = Math.random() * 100;
+        const rotation = Math.random() * 360;
+        const duration = 2 + Math.random() * 2;
+        const translateX = Math.random() * 200 - 100;
+        const finalRotation = Math.random() * 720;
+        
         confetti.style.cssText = `
             position: fixed;
             width: 10px;
             height: 10px;
-            background: ${colors[Math.floor(Math.random() * colors.length)]};
-            left: ${Math.random() * 100}%;
+            background: ${color};
+            left: ${leftPos}%;
             top: -10px;
             opacity: 1;
-            transform: rotate(${Math.random() * 360}deg);
-            animation: fall ${2 + Math.random() * 2}s linear forwards;
+            transform: rotate(${rotation}deg);
+            animation: fall-${i} ${duration}s linear forwards;
             pointer-events: none;
             z-index: 10000;
         `;
+        
+        // Create unique animation for each confetti
+        const keyframes = `
+            @keyframes fall-${i} {
+                to {
+                    top: 100vh;
+                    opacity: 0;
+                    transform: translateX(${translateX}px) rotate(${finalRotation}deg);
+                }
+            }
+        `;
+        const styleSheet = document.createElement('style');
+        styleSheet.textContent = keyframes;
+        document.head.appendChild(styleSheet);
         
         document.body.appendChild(confetti);
         
         setTimeout(() => {
             confetti.remove();
-        }, 4000);
+            styleSheet.remove();
+        }, duration * 1000 + 100);
     }
 }
 
-// Add CSS for confetti animation
+// Add CSS for slide out animation
 const style = document.createElement('style');
 style.textContent = `
-    @keyframes fall {
-        to {
-            top: 100vh;
-            opacity: 0;
-            transform: translateX(${Math.random() * 200 - 100}px) rotate(${Math.random() * 720}deg);
-        }
-    }
-    
     @keyframes slideOutRight {
         to {
             transform: translateX(120%);

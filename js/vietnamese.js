@@ -1,5 +1,8 @@
 // Vietnamese Learning Module
 
+// Traditional Vietnamese alphabet (29 letters)
+// Note: F, J, W, Z are excluded as they are not part of traditional Vietnamese
+// These letters only appear in foreign loanwords
 const vietnameseAlphabet = [
     'A', 'Ă', 'Â', 'B', 'C', 'D', 'Đ', 'E', 'Ê', 'G', 'H', 'I', 'K', 'L', 'M',
     'N', 'O', 'Ô', 'Ơ', 'P', 'Q', 'R', 'S', 'T', 'U', 'Ư', 'V', 'X', 'Y'

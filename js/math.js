@@ -3,6 +3,7 @@
 let currentLevel = 'counting';
 let currentQuestion = 0;
 let score = 0;
+// Total questions per session - can be adjusted based on difficulty level
 let totalQuestions = 10;
 let currentAnswer = null;
 
