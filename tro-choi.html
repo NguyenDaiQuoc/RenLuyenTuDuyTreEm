@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trò Chơi - Rèn Luyện Tư Duy Trẻ Em</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <style>
+        .games-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 2rem;
+        }
+
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .game-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .game-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .game-icon {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+        }
+
+        .game-title {
+            font-size: 1.5rem;
+            color: var(--text-color);
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        .game-description {
+            color: #666;
+            font-size: 1rem;
+        }
+
+        .game-area {
+            background: var(--card-bg);
+            padding: 3rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            min-height: 500px;
+            display: none;
+        }
+
+        .game-area.active {
+            display: block;
+        }
+
+        /* Memory Game */
+        .memory-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            max-width: 600px;
+            margin: 2rem auto;
+        }
+
+        .memory-card {
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, var(--secondary-color), #6FD9D1);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow);
+        }
+
+        .memory-card:hover {
+            transform: scale(1.05);
+        }
+
+        .memory-card.flipped {
+            background: var(--card-bg);
+            border: 3px solid var(--secondary-color);
+        }
+
+        .memory-card.matched {
+            background: var(--success-color);
+            cursor: default;
+            animation: pulse 0.5s ease;
+        }
+
+        .memory-card .card-back {
+            display: block;
+        }
+
+        .memory-card .card-front {
+            display: none;
+        }
+
+        .memory-card.flipped .card-back {
+            display: none;
+        }
+
+        .memory-card.flipped .card-front {
+            display: block;
+        }
+
+        /* Pattern Game */
+        .pattern-display {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .pattern-item {
+            font-size: 4rem;
+            padding: 1rem;
+            background: var(--card-bg);
+            border: 3px solid var(--secondary-color);
+            border-radius: 15px;
+            min-width: 80px;
+            text-align: center;
+        }
+
+        .pattern-item.blank {
+            background: #f5f5f5;
+            border-style: dashed;
+        }
+
+        .pattern-options {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .pattern-option {
+            font-size: 3rem;
+            padding: 1rem 2rem;
+            background: var(--card-bg);
+            border: 3px solid var(--secondary-color);
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .pattern-option:hover {
+            background: var(--secondary-color);
+            color: white;
+            transform: scale(1.1);
+        }
+
+        /* Puzzle Game */
+        .puzzle-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.5rem;
+            max-width: 400px;
+            margin: 2rem auto;
+        }
+
+        .puzzle-piece {
+            aspect-ratio: 1;
+            background: var(--card-bg);
+            border: 3px solid var(--secondary-color);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .puzzle-piece:hover {
+            background: var(--accent-color);
+            transform: scale(1.05);
+        }
+
+        .puzzle-piece.empty {
+            background: #f5f5f5;
+            border-style: dashed;
+            cursor: default;
+        }
+
+        .game-controls {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .game-stats {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .stat-box {
+            padding: 1rem 2rem;
+            background: var(--accent-color);
+            border-radius: 15px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .back-btn {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            padding: 0.5rem 1rem;
+            background: var(--secondary-color);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .back-btn:hover {
+            background: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-icon">🎓</span>
+                <span class="logo-text">Học Vui Cùng Bé</span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">🏠 Trang Chủ</a></li>
+                <li><a href="toan-hoc.html" class="nav-link">🔢 Toán Học</a></li>
+                <li><a href="tieng-viet.html" class="nav-link">📚 Tiếng Việt</a></li>
+                <li><a href="tro-choi.html" class="nav-link active">🎮 Trò Chơi</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="games-container">
+            <h1 class="section-title">🎮 Trò Chơi Trí Tuệ</h1>
+            
+            <div class="games-grid" id="gamesGrid">
+                <div class="game-card" onclick="startGame('memory')">
+                    <div class="game-icon">🧠</div>
+                    <h3 class="game-title">Trò Chơi Trí Nhớ</h3>
+                    <p class="game-description">Tìm các cặp thẻ giống nhau</p>
+                </div>
+
+                <div class="game-card" onclick="startGame('pattern')">
+                    <div class="game-icon">🔍</div>
+                    <h3 class="game-title">Tìm Quy Luật</h3>
+                    <p class="game-description">Hoàn thành dãy số theo quy luật</p>
+                </div>
+
+                <div class="game-card" onclick="startGame('puzzle')">
+                    <div class="game-icon">🧩</div>
+                    <h3 class="game-title">Xếp Số</h3>
+                    <p class="game-description">Sắp xếp các số theo thứ tự</p>
+                </div>
+            </div>
+
+            <!-- Memory Game -->
+            <div class="game-area" id="memoryGame">
+                <button class="back-btn" onclick="backToGames()">⬅️ Trở Lại</button>
+                <h2 class="section-title" style="font-size: 2rem;">🧠 Trò Chơi Trí Nhớ</h2>
+                <div class="game-stats">
+                    <div class="stat-box">Nước đi: <span id="memoryMoves">0</span></div>
+                    <div class="stat-box">Cặp tìm được: <span id="memoryMatches">0</span></div>
+                </div>
+                <div class="memory-grid" id="memoryGrid"></div>
+                <div class="game-controls">
+                    <button class="btn btn-primary" onclick="resetMemoryGame()">🔄 Chơi Lại</button>
+                </div>
+            </div>
+
+            <!-- Pattern Game -->
+            <div class="game-area" id="patternGame">
+                <button class="back-btn" onclick="backToGames()">⬅️ Trở Lại</button>
+                <h2 class="section-title" style="font-size: 2rem;">🔍 Tìm Quy Luật</h2>
+                <div class="game-stats">
+                    <div class="stat-box">Điểm: <span id="patternScore">0</span></div>
+                </div>
+                <p style="text-align: center; font-size: 1.2rem; margin-bottom: 2rem;">
+                    Tìm số tiếp theo trong dãy số!
+                </p>
+                <div class="pattern-display" id="patternDisplay"></div>
+                <div class="pattern-options" id="patternOptions"></div>
+                <div class="game-controls">
+                    <button class="btn btn-primary" onclick="nextPattern()" id="nextPatternBtn" style="display: none;">
+                        Câu Tiếp ➡️
+                    </button>
+                </div>
+            </div>
+
+            <!-- Puzzle Game -->
+            <div class="game-area" id="puzzleGame">
+                <button class="back-btn" onclick="backToGames()">⬅️ Trở Lại</button>
+                <h2 class="section-title" style="font-size: 2rem;">🧩 Xếp Số</h2>
+                <div class="game-stats">
+                    <div class="stat-box">Nước đi: <span id="puzzleMoves">0</span></div>
+                </div>
+                <p style="text-align: center; font-size: 1.2rem; margin-bottom: 2rem;">
+                    Sắp xếp các số từ 1 đến 8!
+                </p>
+                <div class="puzzle-grid" id="puzzleGrid"></div>
+                <div class="game-controls">
+                    <button class="btn btn-primary" onclick="resetPuzzleGame()">🔄 Chơi Lại</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 Rèn Luyện Tư Duy Trẻ Em. Học tập vui vẻ mỗi ngày! 🌈</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/games.js"></script>
+</body>
+</html>

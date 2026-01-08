@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiếng Việt - Rèn Luyện Tư Duy Trẻ Em</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <style>
+        .vietnamese-container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 2rem;
+        }
+
+        .lesson-selector {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .lesson-card {
+            padding: 1.5rem;
+            border: 3px solid var(--secondary-color);
+            border-radius: 15px;
+            background: var(--card-bg);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .lesson-card:hover {
+            background: var(--secondary-color);
+            color: white;
+            transform: translateY(-5px);
+        }
+
+        .lesson-card.active {
+            background: linear-gradient(135deg, var(--primary-color), #FF8E8E);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        .lesson-icon {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .lesson-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .learning-area {
+            background: var(--card-bg);
+            padding: 3rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            min-height: 400px;
+        }
+
+        .alphabet-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .letter-card {
+            aspect-ratio: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: var(--card-bg);
+            border: 3px solid var(--secondary-color);
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .letter-card:hover {
+            background: var(--secondary-color);
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .letter-card.active {
+            background: var(--accent-color);
+            border-color: var(--accent-color);
+            animation: bounce 0.5s ease;
+        }
+
+        .word-display {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .word-image {
+            font-size: 8rem;
+            margin-bottom: 1rem;
+        }
+
+        .word-text {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .word-pronunciation {
+            font-size: 1.5rem;
+            color: #666;
+            font-style: italic;
+        }
+
+        .sentence-builder {
+            margin-top: 2rem;
+        }
+
+        .word-bank {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .word-chip {
+            padding: 1rem 1.5rem;
+            background: var(--card-bg);
+            border: 2px solid var(--secondary-color);
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .word-chip:hover {
+            background: var(--secondary-color);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .word-chip.used {
+            opacity: 0.3;
+            pointer-events: none;
+        }
+
+        .sentence-area {
+            min-height: 100px;
+            padding: 2rem;
+            background: #f5f5f5;
+            border-radius: 15px;
+            border: 3px dashed var(--secondary-color);
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .sentence-word {
+            padding: 0.5rem 1rem;
+            background: var(--accent-color);
+            border-radius: 10px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .control-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .quiz-question {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--text-color);
+        }
+
+        .quiz-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .quiz-option {
+            padding: 2rem;
+            background: var(--card-bg);
+            border: 3px solid var(--secondary-color);
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .quiz-option:hover {
+            background: var(--secondary-color);
+            color: white;
+            transform: translateY(-5px);
+        }
+
+        .quiz-option.correct {
+            background: var(--success-color);
+            border-color: var(--success-color);
+        }
+
+        .quiz-option.wrong {
+            background: var(--primary-color);
+            border-color: var(--primary-color);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-icon">🎓</span>
+                <span class="logo-text">Học Vui Cùng Bé</span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">🏠 Trang Chủ</a></li>
+                <li><a href="toan-hoc.html" class="nav-link">🔢 Toán Học</a></li>
+                <li><a href="tieng-viet.html" class="nav-link active">📚 Tiếng Việt</a></li>
+                <li><a href="tro-choi.html" class="nav-link">🎮 Trò Chơi</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="vietnamese-container">
+            <h1 class="section-title">📚 Tiếng Việt Vui Vẻ</h1>
+            
+            <div class="lesson-selector">
+                <div class="lesson-card active" data-lesson="alphabet">
+                    <div class="lesson-icon">🔤</div>
+                    <div class="lesson-title">Bảng Chữ Cái</div>
+                </div>
+                <div class="lesson-card" data-lesson="words">
+                    <div class="lesson-icon">📖</div>
+                    <div class="lesson-title">Học Từ Vựng</div>
+                </div>
+                <div class="lesson-card" data-lesson="sentences">
+                    <div class="lesson-icon">✍️</div>
+                    <div class="lesson-title">Ghép Câu</div>
+                </div>
+                <div class="lesson-card" data-lesson="quiz">
+                    <div class="lesson-icon">❓</div>
+                    <div class="lesson-title">Trắc Nghiệm</div>
+                </div>
+            </div>
+
+            <div class="learning-area" id="learningArea">
+                <!-- Content will be loaded dynamically -->
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 Rèn Luyện Tư Duy Trẻ Em. Học tập vui vẻ mỗi ngày! 🌈</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/vietnamese.js"></script>
+</body>
+</html>
