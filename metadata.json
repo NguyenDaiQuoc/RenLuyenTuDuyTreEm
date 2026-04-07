@@ -1,0 +1,9 @@
+{
+  "name": "BrainyKids",
+  "description": "A gamified learning platform for children to develop logic, creativity, and problem-solving skills through interactive modules and AI-powered experiences.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone",
+    "geolocation"
+  ]
+}

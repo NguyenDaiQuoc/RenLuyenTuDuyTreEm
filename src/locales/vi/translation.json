@@ -1,0 +1,186 @@
+{
+  "home": {
+    "hero_badge": "Mới: Lộ trình học tập AI",
+    "hero_title_1": "Học Thông Minh",
+    "hero_title_2": "Nghĩ Nhanh",
+    "hero_title_3": "Phát Triển Trí Tuệ",
+    "hero_title_4": "Chơi & Học",
+    "hero_desc": "Học tập vui vẻ cho trẻ em. Nền tảng học tập AI tiên tiến nhất thế giới dành cho trẻ em. Hấp dẫn, cá nhân hóa và vui nhộn!",
+    "already_have_account": "Tôi đã có tài khoản",
+    "mascot_speech": "Chào! Tôi là gia sư AI của bạn. Sẵn sàng khám phá chưa?",
+    "stat_explorers": "Người khám phá",
+    "stat_completed": "Bài học",
+    "stat_subjects": "Môn học",
+    "stat_rating": "Đánh giá"
+  },
+  "common": {
+    "get_started": "Bắt đầu ngay",
+    "loading": "Đang tải...",
+    "error": "Đã xảy ra lỗi",
+    "save": "Lưu",
+    "cancel": "Hủy",
+    "xp": "XP",
+    "level": "Cấp độ",
+    "explore": "Khám phá",
+    "enter": "Vào",
+    "find_match": "Tìm trận",
+    "correct": "Chính xác",
+    "back": "Quay lại",
+    "current_level": "Cấp độ hiện tại",
+    "check": "Kiểm tra"
+  },
+  "nav": {
+    "dashboard": "Bảng điều khiển",
+    "leaderboard": "Bảng xếp hạng",
+    "creative_lab": "Phòng thí nghiệm sáng tạo",
+    "battle": "Trận chiến",
+    "askchatbot": "Hỏi AI"
+  },
+  "dashboard": {
+    "welcome": "Chào mừng trở lại, {{name}}!",
+    "welcome_subtitle": "Hôm nay bạn muốn học gì?",
+    "xp_needed": "Cần {{xp}} XP để lên Cấp {{level}}",
+    "subjects": "Môn học của bạn",
+    "creative_lab_title": "Phòng sáng tạo",
+    "creative_lab_desc": "Xây dựng trò chơi và câu chuyện của riêng bạn với AI!",
+    "battle_title": "Đấu trường",
+    "battle_desc": "Thách thức bạn bè trong các trận chiến thời gian thực!",
+    "daily_quests": "Nhiệm vụ hàng ngày",
+    "streak_title": "Chuỗi của bạn",
+    "days": "Ngày",
+    "keep_it_up": "Cố gắng lên!",
+    "view_leaderboard": "Xem bảng xếp hạng",
+    "streak_days": "{{count}} Ngày",
+    "weekly_challenge_title": "Thử thách tuần! 🚀",
+    "weekly_challenge_desc": "Hoàn thành 5 cấp độ trong môn Khoa học tuần này để nhận huy hiệu 'Nhà thám hiểm không gian' và 500 XP thưởng!",
+    "view_challenge": "Xem thử thách"
+  },
+  "subjects": {
+    "math": {
+      "name": "Toán học",
+      "desc": "Số, hình khối và câu đố logic!",
+      "levels": {
+        "math-1": "Đếm sao",
+        "math-2": "Phân loại hình dạng",
+        "math-3": "Phép cộng vui vẻ",
+        "math-4": "Sức mạnh của quy luật",
+        "math-5": "Câu đố logic"
+      }
+    },
+    "science": {
+      "name": "Khoa học Tự nhiên",
+      "desc": "Thí nghiệm, động vật và cách thế giới vận hành!"
+    },
+    "logic": {
+      "name": "Tư duy Logic",
+      "desc": "Câu đố, quy luật và các trò chơi trí tuệ!"
+    }
+  },
+  "quiz": {
+    "mascot_start": "Bắt đầu bài kiểm tra nào! Bạn làm được mà!",
+    "mascot_correct": "Tuyệt vời! Bạn đã trả lời đúng!",
+    "mascot_wrong": "Rất tiếc! Chưa chính xác, hãy tiếp tục cố gắng nhé!",
+    "mascot_next": "Sẵn sàng cho câu tiếp theo chưa?",
+    "result_mascot": "Wow! Bạn đã hoàn thành bài học!",
+    "result_title": "Hoàn thành bài học!",
+    "continue": "Tiếp tục",
+    "play_again": "Chơi lại",
+    "generating": "Đang tạo bài tập kỳ diệu cho bạn...",
+    "error_loading": "Ối! Đã có lỗi xảy ra khi tải bài tập.",
+    "q1_prompt": "Có bao nhiêu ngôi sao trong hình?",
+    "q1_explanation": "Đếm cẩn thận nhé: 1, 2, 3, 4, 5!",
+    "q2_prompt": "Hình nào có 3 cạnh?",
+    "q2_square": "Hình vuông",
+    "q2_circle": "Hình tròn",
+    "q2_triangle": "Hình tam giác",
+    "q2_rectangle": "Hình chữ nhật",
+    "q2_explanation": "Hình tam giác luôn có 3 cạnh và 3 góc!",
+    "q3_prompt": "2 + 3 bằng mấy?",
+    "q3_explanation": "Nếu bạn có 2 quả táo và nhận thêm 3 quả nữa, bạn sẽ có 5 quả táo!"
+  },
+  "ai_generator": {
+    "title": "Phòng thí nghiệm bài tập AI",
+    "subtitle": "Tạo các bài tập cá nhân hóa dành riêng cho bạn!",
+    "age_label": "Bạn bao nhiêu tuổi?",
+    "subject_label": "Môn học nào?",
+    "difficulty_label": "Mức độ khó",
+    "generate_button": "Tạo bài tập phép thuật!",
+    "generating": "Đang chuẩn bị bài tập phép thuật...",
+    "generating_subtitle": "AI của chúng tôi đang nghĩ ra những câu đố vui cho bạn!",
+    "results_title": "Bài tập tùy chỉnh của bạn",
+    "results_desc": "Dưới đây là một số thử thách thú vị dành cho bạn!",
+    "try_again": "Bắt đầu lại",
+    "explanation": "Giải thích",
+    "play_btn": "Làm những bài tập này!",
+    "mascot_setup": "Hãy tạo một số bài tập phép thuật tùy chỉnh dành riêng cho bạn!",
+    "subject_math": "Toán học",
+    "subject_science": "Khoa học",
+    "subject_logic": "Logic",
+    "diff_easy": "Dễ",
+    "diff_medium": "Trung bình",
+    "diff_hard": "Khó"
+  },
+  "login": {
+    "title": "Chào mừng trở lại!",
+    "subtitle": "Sẵn sàng cho cuộc phiêu lưu học tập tiếp theo của bạn chưa?",
+    "google_btn": "Đăng nhập bằng Google",
+    "terms": "Bằng cách đăng nhập, bạn đồng ý với Điều khoản dịch vụ và Chính sách bảo mật của chúng tôi."
+  },
+  "quests": {
+    "xp_title": "Kiếm 200 XP",
+    "lesson_title": "Hoàn thành 2 bài học",
+    "streak_title": "Duy trì chuỗi 3 ngày",
+    "xp_reward": "Thưởng +{{xp}} XP!"
+  },
+  "leaderboard": {
+    "title": "Bảng vàng danh dự",
+    "subtitle": "Những nhà thám hiểm hàng đầu trong tuần!",
+    "rank": "Hạng",
+    "player": "Người chơi",
+    "xp": "XP",
+    "level": "Cấp độ",
+    "you": "(Bạn)"
+  },
+  "creative_lab": {
+    "title": "Phòng thí nghiệm sáng tạo",
+    "subtitle": "Xây dựng trò chơi và câu chuyện của riêng bạn với AI!",
+    "tab_image": "Hình ảnh",
+    "tab_video": "Video",
+    "tab_music": "Âm nhạc",
+    "prompt_label": "Bạn muốn tạo gì?",
+    "prompt_placeholder_image": "Một chú robot dễ thương đang chơi bóng đá trên sao Hỏa...",
+    "prompt_placeholder_video": "Một khu rừng huyền bí với những chú bướm phát sáng...",
+    "prompt_placeholder_music": "Một bài hát vui vẻ cho một ngày nắng đẹp...",
+    "quality": "Chất lượng",
+    "generating": "Đang tạo phép màu...",
+    "generate_btn": "Tạo ngay",
+    "download": "Tải xuống",
+    "preview_placeholder": "Tác phẩm của bạn sẽ xuất hiện ở đây!"
+  },
+  "battle": {
+    "title": "Trận chiến đố vui PvP",
+    "subtitle": "Cạnh tranh với những nhà thám hiểm khác trong thời gian thực và chứng minh sức mạnh trí tuệ của bạn!",
+    "find_btn": "Tìm đối thủ",
+    "searching": "Đang tìm đối thủ...",
+    "searching_subtitle": "Brainy đang tìm kiếm một người thách đấu xứng tầm!",
+    "cancel_btn": "Hủy tìm kiếm",
+    "vs": "VS",
+    "victory": "Chiến thắng!",
+    "good_game": "Trận đấu hay!",
+    "defeated": "Bạn đã đánh bại {{opponent}}!",
+    "faster": "{{opponent}} đã nhanh hơn một chút lần này!",
+    "your_score": "Điểm của bạn",
+    "opponent_score": "Điểm của {{opponent}}",
+    "back_btn": "Quay lại bảng điều khiển",
+    "mascot_ready": "Sẵn sàng cho một thử thách?"
+  },
+  "chatbot": {
+    "welcome": "Chào! Hãy hỏi tôi bất cứ điều gì!",
+    "ask_btn": "Hỏi",
+    "fallback": "Xin lỗi, tôi không hiểu. Bạn có thể diễn đạt lại không?",
+    "error": "Đã xảy ra lỗi. Vui lòng thử lại.",
+    "name": "Brainy AI",
+    "status": "Trực tuyến",
+    "input_placeholder": "Hỏi tôi một câu hỏi..."
+  }
+}

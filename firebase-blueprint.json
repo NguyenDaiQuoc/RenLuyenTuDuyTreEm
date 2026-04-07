@@ -1,0 +1,117 @@
+{
+  "entities": {
+    "User": {
+      "title": "User Profile",
+      "description": "Stores child's profile, XP, and progress.",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string", "description": "Firebase Auth UID" },
+        "username": { "type": "string" },
+        "avatar": { "type": "string" },
+        "xp": { "type": "integer" },
+        "level": { "type": "integer" },
+        "totalXP": { "type": "integer" },
+        "streak": { "type": "integer" },
+        "lastActive": { "type": "string", "format": "date-time" },
+        "badges": { "type": "array", "items": { "type": "string" } },
+        "role": { "type": "string", "enum": ["user", "admin"] },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "dailyQuests": { "type": "array", "items": { "type": "object" } },
+        "unlockedLevels": { "type": "array", "items": { "type": "string" } }
+      },
+      "required": ["uid", "username", "xp", "level", "role"]
+    },
+    "UserLevelProgress": {
+      "title": "User Level Progress",
+      "description": "Tracks a user's progress on a specific level.",
+      "type": "object",
+      "properties": {
+        "levelId": { "type": "string" },
+        "subjectId": { "type": "string" },
+        "completed": { "type": "boolean" },
+        "stars": { "type": "integer", "minimum": 0, "maximum": 3 },
+        "bestScore": { "type": "integer" },
+        "unlocked": { "type": "boolean" }
+      },
+      "required": ["levelId", "subjectId", "completed", "stars"]
+    },
+    "Subject": {
+      "title": "Learning Subject",
+      "description": "Math, Science, or Nature.",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "icon": { "type": "string" },
+        "description": { "type": "string" },
+        "color": { "type": "string" }
+      },
+      "required": ["name"]
+    },
+    "Level": {
+      "title": "Subject Level",
+      "description": "A specific level within a subject.",
+      "type": "object",
+      "properties": {
+        "subjectId": { "type": "string" },
+        "order": { "type": "integer" },
+        "title": { "type": "string" },
+        "difficulty": { "type": "string", "enum": ["easy", "medium", "hard"] }
+      },
+      "required": ["subjectId", "order", "title"]
+    },
+    "Question": {
+      "title": "Quiz Question",
+      "description": "Interactive visual questions for kids.",
+      "type": "object",
+      "properties": {
+        "levelId": { "type": "string" },
+        "type": { "type": "string", "enum": ["multiple-choice", "matching", "sorting"] },
+        "prompt": { "type": "string" },
+        "imageUrl": { "type": "string" },
+        "options": { "type": "array", "items": { "type": "string" } },
+        "correctAnswer": { "type": "string" },
+        "explanation": { "type": "string" }
+      },
+      "required": ["levelId", "type", "prompt", "correctAnswer"]
+    },
+    "Attempt": {
+      "title": "Level Attempt",
+      "description": "Records of user attempts on levels.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "levelId": { "type": "string" },
+        "score": { "type": "integer" },
+        "xpEarned": { "type": "integer" },
+        "completedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["userId", "levelId", "score"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "User",
+      "description": "Individual user profiles."
+    },
+    "/users/{userId}/progress/{levelId}": {
+      "schema": "UserLevelProgress",
+      "description": "User's progress on a specific level."
+    },
+    "/subjects/{subjectId}": {
+      "schema": "Subject",
+      "description": "Available learning subjects."
+    },
+    "/subjects/{subjectId}/levels/{levelId}": {
+      "schema": "Level",
+      "description": "Levels within a subject."
+    },
+    "/levels/{levelId}/questions/{questionId}": {
+      "schema": "Question",
+      "description": "Questions for a specific level."
+    },
+    "/attempts/{attemptId}": {
+      "schema": "Attempt",
+      "description": "User progress tracking."
+    }
+  }
+}
