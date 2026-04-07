@@ -1,0 +1,186 @@
+{
+  "home": {
+    "hero_badge": "New: AI Learning Path",
+    "hero_title_1": "Learn Smart",
+    "hero_title_2": "Think Fast",
+    "hero_title_3": "Grow Brain",
+    "hero_title_4": "Play & Learn",
+    "hero_desc": "Fun learning for kids. The world's most advanced AI learning platform for kids. Engaging, personalized, and fun!",
+    "already_have_account": "I already have an account",
+    "mascot_speech": "Hi! I'm your AI tutor. Ready to explore?",
+    "stat_explorers": "Explorers",
+    "stat_completed": "Lessons",
+    "stat_subjects": "Subjects",
+    "stat_rating": "Rating"
+  },
+  "common": {
+    "get_started": "Get Started",
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "save": "Save",
+    "cancel": "Cancel",
+    "xp": "XP",
+    "level": "Level",
+    "explore": "Explore",
+    "enter": "Enter",
+    "find_match": "Find Match",
+    "correct": "Correct",
+    "back": "Back",
+    "current_level": "Current Level",
+    "check": "Check"
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "leaderboard": "Leaderboard",
+    "creative_lab": "Creative Lab",
+    "battle": "Battle",
+    "askchatbot": "Ask AI"
+  },
+  "dashboard": {
+    "welcome": "Welcome back, {{name}}!",
+    "welcome_subtitle": "What do you want to learn today?",
+    "xp_needed": "{{xp}} XP to Level {{level}}",
+    "subjects": "Your Subjects",
+    "creative_lab_title": "Creative Lab",
+    "creative_lab_desc": "Build your own games and stories with AI!",
+    "battle_title": "Battle Arena",
+    "battle_desc": "Challenge your friends in real-time battles!",
+    "daily_quests": "Daily Quests",
+    "streak_title": "Your Streak",
+    "days": "Days",
+    "keep_it_up": "Keep it up!",
+    "view_leaderboard": "View Leaderboard",
+    "streak_days": "{{count}} Days",
+    "weekly_challenge_title": "Weekly Challenge! 🚀",
+    "weekly_challenge_desc": "Complete 5 levels in Science this week to earn the 'Space Explorer' badge and 500 bonus XP!",
+    "view_challenge": "View Challenge"
+  },
+  "subjects": {
+    "math": {
+      "name": "Math",
+      "desc": "Numbers, shapes, and logic puzzles!",
+      "levels": {
+        "math-1": "Counting Stars",
+        "math-2": "Shape Sorting",
+        "math-3": "Addition Fun",
+        "math-4": "Pattern Power",
+        "math-5": "Logic Puzzles"
+      }
+    },
+    "science": {
+      "name": "Natural Science",
+      "desc": "Experiments, animals, and how things work!"
+    },
+    "logic": {
+      "name": "Logical Thinking",
+      "desc": "Puzzles, patterns, and brain games!"
+    }
+  },
+  "quiz": {
+    "mascot_start": "Let's start the quiz! You can do it!",
+    "mascot_correct": "Amazing! You got it right!",
+    "mascot_wrong": "Oops! Not quite, but keep trying!",
+    "mascot_next": "Ready for the next one?",
+    "result_mascot": "Wow! You finished the lesson!",
+    "result_title": "Lesson Complete!",
+    "continue": "Continue",
+    "play_again": "Play Again",
+    "generating": "Generating your magical exercise...",
+    "error_loading": "Oops! Something went wrong while loading the exercise.",
+    "q1_prompt": "How many stars are in the picture?",
+    "q1_explanation": "Count them carefully: 1, 2, 3, 4, 5!",
+    "q2_prompt": "Which shape has 3 sides?",
+    "q2_square": "Square",
+    "q2_circle": "Circle",
+    "q2_triangle": "Triangle",
+    "q2_rectangle": "Rectangle",
+    "q2_explanation": "A triangle always has 3 sides and 3 corners!",
+    "q3_prompt": "What is 2 + 3?",
+    "q3_explanation": "If you have 2 apples and get 3 more, you have 5 apples!"
+  },
+  "ai_generator": {
+    "title": "AI Exercise Lab",
+    "subtitle": "Create personalized exercises just for you!",
+    "age_label": "How old are you?",
+    "subject_label": "What subject?",
+    "difficulty_label": "Difficulty Level",
+    "generate_button": "Generate Magic Exercises!",
+    "generating": "Brewing Magic Exercises...",
+    "generating_subtitle": "Our AI is thinking of fun puzzles for you!",
+    "results_title": "Your Custom Exercises",
+    "results_desc": "Here are some fun challenges for you!",
+    "try_again": "Start Over",
+    "explanation": "Explanation",
+    "play_btn": "Play These Exercises!",
+    "mascot_setup": "Let's create some custom magic exercises just for you!",
+    "subject_math": "Math",
+    "subject_science": "Science",
+    "subject_logic": "Logic",
+    "diff_easy": "Easy",
+    "diff_medium": "Medium",
+    "diff_hard": "Hard"
+  },
+  "login": {
+    "title": "Welcome Back!",
+    "subtitle": "Ready for your next learning adventure?",
+    "google_btn": "Sign in with Google",
+    "terms": "By signing in, you agree to our Terms of Service and Privacy Policy."
+  },
+  "quests": {
+    "xp_title": "Earn 200 XP",
+    "lesson_title": "Complete 2 Lessons",
+    "streak_title": "Maintain 3-day Streak",
+    "xp_reward": "+{{xp}} XP Reward!"
+  },
+  "leaderboard": {
+    "title": "Hall of Fame",
+    "subtitle": "Top explorers of the week!",
+    "rank": "Rank",
+    "player": "Player",
+    "xp": "XP",
+    "level": "Level",
+    "you": "(You)"
+  },
+  "creative_lab": {
+    "title": "Creative Lab",
+    "subtitle": "Build your own games and stories with AI!",
+    "tab_image": "Image",
+    "tab_video": "Video",
+    "tab_music": "Music",
+    "prompt_label": "What do you want to create?",
+    "prompt_placeholder_image": "A cute robot playing soccer on Mars...",
+    "prompt_placeholder_video": "A magical forest with glowing butterflies...",
+    "prompt_placeholder_music": "A happy upbeat song for a sunny day...",
+    "quality": "Quality",
+    "generating": "Creating Magic...",
+    "generate_btn": "Generate",
+    "download": "Download",
+    "preview_placeholder": "Your creation will appear here!"
+  },
+  "battle": {
+    "title": "PvP Quiz Battle",
+    "subtitle": "Compete with other explorers in real-time and prove your brain power!",
+    "find_btn": "Find Opponent",
+    "searching": "Searching for Opponent...",
+    "searching_subtitle": "Brainy is looking for a worthy challenger!",
+    "cancel_btn": "Cancel Search",
+    "vs": "VS",
+    "victory": "Victory!",
+    "good_game": "Good Game!",
+    "defeated": "You defeated {{opponent}}!",
+    "faster": "{{opponent}} was a bit faster this time!",
+    "your_score": "Your Score",
+    "opponent_score": "{{opponent}}'s Score",
+    "back_btn": "Back to Dashboard",
+    "mascot_ready": "Ready for a challenge?"
+  },
+  "chatbot": {
+    "welcome": "Hi! Ask me anything!",
+    "ask_btn": "Ask",
+    "fallback": "I'm sorry, I don't understand. Can you rephrase?",
+    "error": "Something went wrong. Please try again.",
+    "name": "Brainy AI",
+    "status": "Online",
+    "input_placeholder": "Ask me a question..."
+  }
+}

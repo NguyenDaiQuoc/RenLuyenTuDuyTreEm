@@ -1,0 +1,37 @@
+# BrainyKids Project Structure
+
+/
+├── src/                # Frontend Source
+│   ├── components/     # Reusable UI components
+│   │   ├── ui/         # Base UI elements (Buttons, Cards, etc.)
+│   │   ├── layout/     # Layout components (Navbar, Sidebar)
+│   │   ├── game/       # Game-specific components
+│   │   └── ai/         # AI-related components (Chatbot, Generators)
+│   ├── hooks/          # Custom React hooks
+│   ├── pages/          # Main page views
+│   ├── services/       # API and Firebase service logic
+│   ├── store/          # Zustand state management
+│   ├── types/          # TypeScript interfaces and enums
+│   ├── utils/          # Helper functions
+│   ├── App.tsx         # Main App component
+│   ├── firebase.ts     # Firebase initialization
+│   ├── main.tsx        # Entry point
+│   └── index.css       # Global styles
+├── server/             # Backend Source (Express)
+│   ├── routes/         # API routes
+│   ├── socket/         # WebSocket logic for PvP
+│   └── index.ts        # Server entry point
+├── public/             # Static assets
+├── .env.example        # Environment variables template
+├── firebase-blueprint.json # Firestore data structure
+├── firestore.rules     # Firestore security rules
+├── metadata.json       # App metadata
+├── package.json        # Dependencies and scripts
+└── tsconfig.json       # TypeScript configuration
+
+## Folder Explanations:
+- **src/components**: Modular UI parts. `ui` for atomic components, `game` for interactive learning elements.
+- **src/store**: Centralized state for XP, user progress, and current session.
+- **src/services**: Encapsulates Firebase Auth, Firestore, and Gemini AI calls.
+- **server/**: Handles complex backend logic, AI generation (Veo, Lyria), and real-time PvP via Socket.io.
+- **firebase-blueprint.json**: Defines the "What" and "Where" of our data for consistency.

@@ -1,0 +1,29 @@
+# BrainyKids Roadmap
+
+## ✅ DONE
+- Project initialization and structure.
+- Metadata and documentation setup.
+- Tech stack selection (Vite + Express + Firebase).
+- Firebase Auth integration (Google Sign-in).
+- Firestore schema implementation (Users, Levels, Questions).
+- Core UI components (Playful design system).
+- Subject modules (Math, Science, Nature).
+- XP and Leveling logic.
+- Gemini AI Chatbot for kids.
+- Image/Video/Music generation rewards.
+- Socket.io integration & Matchmaking.
+- Live PvP Quiz Battle.
+- Docker setup & CI/CD pipeline.
+
+## 🏗 TODO
+- [ ] Admin Panel for content management.
+- [ ] Personalized learning paths based on performance.
+- [ ] Performance monitoring (Sentry, PostHog).
+- [ ] Multi-region database replication.
+
+## 🚀 FUTURE
+- [ ] Mobile App (React Native).
+- [ ] Parental control dashboard.
+- [ ] Offline mode support.
+- [ ] Multi-language support (i18n).
+- [ ] Advanced AR learning modules.
